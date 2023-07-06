@@ -1,3 +1,5 @@
+import WelcomeCard from "@/app/components/WelcomeCard";
+
 const StartingPage = () => {
   return (
     <main className="main">
@@ -12,6 +14,7 @@ const StartingPage = () => {
           04.07.2023
         </p>
       </div>
+      <WelcomeCard />
     </main>
   );
 };
