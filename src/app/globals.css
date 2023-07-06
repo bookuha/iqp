@@ -4,3 +4,7 @@ body {
   background-color: #121212;
   color: aliceblue;
 }
+
+.main {
+  padding: 1vh 2vw;
+}
