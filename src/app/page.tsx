@@ -1,4 +1,5 @@
 import WelcomeCard from "@/app/components/WelcomeCard";
+import { CategoriesList } from "@/app/components/CategoriesList";
 
 const StartingPage = () => {
   return (
@@ -15,6 +16,7 @@ const StartingPage = () => {
         </p>
       </div>
       <WelcomeCard />
+      <CategoriesList />
     </main>
   );
 };

@@ -1,0 +1,17 @@
+.list{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 50vw;
+
+}
+
+.link{
+    font-size: 1.15rem;
+    text-decoration: none;
+    color: #38B2AC;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
