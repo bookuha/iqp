@@ -1,22 +1,25 @@
-import { Link, LinksList } from "@/app/components/LinksList";
+import { LinksList } from "@/app/components/LinksList";
 import styles from "./categories-list.module.css";
+import { Category } from ".prisma/client";
 
-const links: Link[] = [
-  { label: "Hot", url: "123" },
-  { label: "Internals", url: "123" },
-  { label: "ASP.NET", url: "123" },
-  { label: "Optimization", url: "123" },
-  { label: ".NET Framework", url: "123" },
-  { label: "F#", url: "123" },
-  { label: "WPF/Avalonia", url: "123" },
-];
+const fetchCategories = async () => {
+  const res = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/categories");
+  return await res.json();
+};
 
-export const CategoriesList = () => {
+export const CategoriesList = async () => {
+  const categories: Category[] = await fetchCategories();
+
   return (
     <div>
       <h2>Categories</h2>
       <div className={styles.content}>
-        <LinksList links={links} />
+        <LinksList
+          links={categories.map(({ title, slug }) => ({
+            label: title,
+            url: "categories/" + slug,
+          }))}
+        />
       </div>
     </div>
   );

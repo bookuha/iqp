@@ -13,6 +13,7 @@ datasource db {
 model Category {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   title       String @unique
+  slug        String @unique
   description String
 }
 

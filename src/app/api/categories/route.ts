@@ -1,12 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/app/lib/prisma";
+import { Category } from ".prisma/client";
 
 export async function GET() {
   const categories = await prisma.category.findMany();
-  return NextResponse.json(categories);
+  return NextResponse.json<Category[]>(categories);
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   if (request.headers.get("api-key") !== process.env.API_KEY)
     return new NextResponse(
       "This route is currently secured for safety reasons.",
