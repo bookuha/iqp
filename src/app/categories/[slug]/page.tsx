@@ -1,4 +1,5 @@
 import { Category } from ".prisma/client";
+import { CreateQuestionForm } from "@/app/categories/[slug]/components/CreateQuestionForm/CreateQuestionForm";
 
 const fetchCategory = async (slug: string) => {
   const res = await fetch(
@@ -16,6 +17,8 @@ const CategoryPage = async ({ params }: { params: { slug: string } }) => {
     <main className="main">
       <h1>{category.title}</h1>
       <p>{category.description}</p>
+      <h3>Add a question</h3>
+      <CreateQuestionForm />
     </main>
   );
 };

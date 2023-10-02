@@ -33,5 +33,3 @@ export async function POST(request: NextRequest) {
     return new NextResponse(error.message, { status: 500 });
   }
 }
-{
-}

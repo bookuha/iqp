@@ -1,0 +1,37 @@
+.form {
+  max-width: 50vw;
+}
+
+.input {
+  min-width: 300px;
+  color: white;
+  padding: 12px 20px;
+  background-color: #202020;
+  appearance: none;
+  border: none;
+  resize: none;
+  overflow: hidden;
+}
+
+.textarea {
+  min-height: 12vh;
+}
+
+.error {
+  color: #f65d5d;
+}
+
+.submit {
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #9ae6e1;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(174, 228, 193, 0.08);
+  transition: background-color 0.2s;
+}
+
+.submit:hover {
+  background-color: rgba(174, 228, 193, 0.16);
+}
